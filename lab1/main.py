@@ -34,9 +34,9 @@ def levinstein_matrix(s1, s2):
                 change += 1
             matrix[i][j] = min(add, delete, change)
 
-    # print("\nМатрица расстояния Левенштейна")
-    # print_matrix(s1, s2, matrix)
-    # print("Расстояние Левенштейна = ", matrix[n][m])
+    print("\nМатрица расстояния Левенштейна")
+    print_matrix(s1, s2, matrix)
+    print("Расстояние Левенштейна = ", matrix[n][m])
 
     return matrix[n][m]
 
@@ -73,9 +73,9 @@ def levinstein_recursive_matrix(s1, s2):
             matrix[i][j] = -1
 
     recursive(s1, s2, n, m, matrix)
-    # print("\nМатрица заполненная рекурсивно: ")
-    # print_matrix(s1, s2, matrix)
-    # print("Расстояние Левенштейна = ", matrix[n][m])
+    print("\nМатрица заполненная рекурсивно: ")
+    print_matrix(s1, s2, matrix)
+    print("Расстояние Левенштейна = ", matrix[n][m])
 
     return matrix[n][m]
 
@@ -108,9 +108,9 @@ def damerau_levinstein_matrix(s1, s2):
             matrix[i][j] = min(add, delete, change)
             if ((i > 1 and j > 1) and s1[i - 1] == s2[j - 2] and s1[i - 2] == s2[j - 1]):
                 matrix[i][j] = min(matrix[i][j], matrix[i - 2][j - 2] + 1)
-    # print("\nМатрица расстояния Дамерау-Левенштнейна")
-    # print_matrix(s1, s2, matrix)
-    # print("Расстояние Дамерау-Левенштейна = ", matrix[n][m])
+    print("\nМатрица расстояния Дамерау-Левенштнейна")
+    print_matrix(s1, s2, matrix)
+    print("Расстояние Дамерау-Левенштейна = ", matrix[n][m])
 
     return matrix[n][m]
 
