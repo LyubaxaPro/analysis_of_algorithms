@@ -1,14 +1,24 @@
 def bubble_sort(arr):
-    for i in range(len(arr) - 1):
-        for j in range(len(arr) - i - 1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+    i = 0
+    flag = False
+    while (i < len(arr)):
+        if (i + 1 != len(arr) and arr[i] > arr[i + 1]):
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
+            flag = True
+        i += 1
+
+        if (i == len(arr) and flag):
+            flag = False
+            i = 0
+    return arr
+
 
 def insertion_sort(arr):
-    for i in range(len(arr)):
+    for i in range(1, len(arr)):
         j = i - 1
         key = arr[i]
-        while arr[j] > key and j >= 0:
+
+        while j >= 0 and arr[j] > key:
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key
@@ -27,18 +37,18 @@ if __name__ == "__main__":
     arr = list(int(i) for i in input().split())
     arr_copy = arr.copy()
 
-    print("\nРезультат сортировки пузырьком: ")
+    print("\nРезультат сортировки пузырьком c флагом: ")
     bubble_sort(arr_copy)
     print(arr_copy)
 
-    arr_copy = arr.copy()
-
-    print("\nРезультат сортировки вставками: ")
-    insertion_sort(arr_copy)
-    print(arr_copy)
-
-    arr_copy = arr.copy()
-
-    print("\nРезультат сортировки выбором: ")
-    selection_sort(arr_copy)
-    print(arr_copy)
+    # arr_copy = arr.copy()
+    #
+    # print("\nРезультат сортировки вставками: ")
+    # insertion_sort(arr_copy)
+    # print(arr_copy)
+    #
+    # arr_copy = arr.copy()
+    #
+    # print("\nРезультат сортировки выбором: ")
+    # selection_sort(arr_copy)
+    # print(arr_copy)
