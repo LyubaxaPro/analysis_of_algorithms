@@ -2,7 +2,10 @@ import main
 import string
 import random
 import time
-import sys
+
+import numpy as np
+import matplotlib.pyplot as plt
+
 N = 100
 
 def test(len):
@@ -52,9 +55,8 @@ def print_results(count):
 
     return
 
-
 if __name__ == "__main__":
-    for i in range(10):
-        print_results(i)
+    # for i in range(10):
+    #     print_results(i)
 
 

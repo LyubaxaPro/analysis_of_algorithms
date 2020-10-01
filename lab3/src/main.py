@@ -1,3 +1,4 @@
+import random
 def bubble_sort(arr):
     i = 0
     flag = False
@@ -41,14 +42,14 @@ if __name__ == "__main__":
     bubble_sort(arr_copy)
     print(arr_copy)
 
-    # arr_copy = arr.copy()
-    #
-    # print("\nРезультат сортировки вставками: ")
-    # insertion_sort(arr_copy)
-    # print(arr_copy)
-    #
-    # arr_copy = arr.copy()
-    #
-    # print("\nРезультат сортировки выбором: ")
-    # selection_sort(arr_copy)
-    # print(arr_copy)
+    arr_copy = arr.copy()
+
+    print("\nРезультат сортировки вставками: ")
+    insertion_sort(arr_copy)
+    print(arr_copy)
+
+    arr_copy = arr.copy()
+
+    print("\nРезультат сортировки выбором: ")
+    selection_sort(arr_copy)
+    print(arr_copy)
