@@ -1,0 +1,12 @@
+[0] step item0 time: 581363 (307)  value: 
+[1] step item0 time: 581443 (80)  value: 
+[2] step item0 time: 581580 (137)  value: 
+[3] step item0 time: 581640 (60)  value: 
+[0] step item1 time: 6570830 (5989190)  value: 
+[1] step item1 time: 6573896 (3066)  value: 
+[2] step item1 time: 6576996 (3100)  value: 
+[3] step item1 time: 6580167 (3171)  value: 
+[0] step item2 time: 12569840 (5989673)  value: 
+[1] step item2 time: 12572996 (3156)  value: 
+[2] step item2 time: 12576227 (3231)  value: 
+[3] step item2 time: 12579523 (3296)  value: 

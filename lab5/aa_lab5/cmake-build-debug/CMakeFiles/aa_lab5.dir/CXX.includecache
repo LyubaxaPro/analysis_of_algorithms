@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lyubaxapro/CLionProjects/aa_lab5/main.cpp
+iostream
+-
+queue
+-
+thread
+-
+vector
+-
+mutex
+-
+cstdlib
+-
+unistd.h
+-
+string
+-
+ctime
+-
+

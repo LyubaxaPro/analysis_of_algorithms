@@ -1,0 +1,3 @@
+/home/lyubaxapro/CLionProjects/aa_lab5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lyubaxapro/CLionProjects/aa_lab5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lyubaxapro/CLionProjects/aa_lab5/cmake-build-debug/CMakeFiles/aa_lab5.dir
