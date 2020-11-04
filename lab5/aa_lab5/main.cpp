@@ -8,8 +8,11 @@
 #include <string>
 #include <ctime>
 #include <algorithm>
+<<<<<<< HEAD
 
 static clock_t start_t;
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
 
 using namespace std;
 
@@ -43,6 +46,7 @@ public:
     Timer() = default;
     ~Timer() = default;
 
+<<<<<<< HEAD
     void set_size() {
         waiting_times.resize(n);
         working_times.resize(n);
@@ -60,12 +64,30 @@ public:
     }
 
     void add_time(bool is_waiting, clock_t time, int task) {
+=======
+    void set_size(int n, int th_n) {
+        waiting_times.resize(n);
+        working_times.resize(n);
+
+        for (int i = 0; i < n; i++) {
+            waiting_times[i].resize(th_n);
+            working_times[i].resize(th_n);
+        }
+        min_time.resize(n);
+        max_time.resize(n);
+        avg_time.resize(n);
+        proc_time.resize(n);
+    }
+
+    void add_time(bool is_waiting, double time, int task) {
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         if (is_waiting)
             waiting_times[task].push_back(time);
         else
             working_times[task].push_back(time);
     }
 
+<<<<<<< HEAD
     void add_time_from_start(clock_t time, int task) {
         time_from_start[task].push_back(time);
     }
@@ -124,6 +146,57 @@ private:
     vector<vector<clock_t>> waiting_times;
     vector<vector<clock_t>> working_times;
     vector<vector<clock_t>> time_from_start;
+=======
+    void calculate() {
+
+        for (int i = 0; i < waiting_times.size(); i++){
+            auto minmax = std::minmax_element(waiting_times[i].begin(), waiting_times[i].end());
+            min_time.push_back(*minmax.first);
+            max_time.push_back(*minmax.second);
+
+            auto sum_of_el = 0;
+            for (auto& c : waiting_times[i])
+                sum_of_el += c;
+
+            avg_time.push_back(sum_of_el / waiting_times[i].size());
+        }
+
+        for (int i = 0; i < working_times.size(); i++) {
+            auto sum_of_el = 0;
+            for (auto& c : working_times[i])
+                sum_of_el += c;
+            proc_time.push_back(sum_of_el);
+        }
+    }
+
+    vector<vector<clock_t>> get_waiting_times() {
+        return waiting_times;
+    }
+
+    vector<vector<clock_t>> get_working_times() {
+        return working_times;
+    }
+
+    vector<clock_t> get_min_time() {
+        return min_time;
+    }
+
+    vector<clock_t> get_max_time() {
+        return max_time;
+    }
+
+    vector<clock_t> get_avg_time() {
+        return avg_time;
+    }
+
+    vector<clock_t> get_proc_time() {
+        return proc_time;
+    }
+
+private:
+    vector<vector<clock_t>> waiting_times;
+    vector<vector<clock_t>> working_times;
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
     vector<clock_t> min_time;
     vector<clock_t> max_time;
     vector<clock_t> avg_time;
@@ -192,7 +265,10 @@ void first_conv() {
         }
         string cur_str = queue1.front().str;
         int cur_task_num = queue1.front().task_num;
+<<<<<<< HEAD
         timer.add_time_from_start(clock() - start_t, cur_task_num);
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         timer.add_time(1, clock() - queue1.front().time, queue1.front().task_num);
         queue1.pop();
 
@@ -200,7 +276,10 @@ void first_conv() {
         m1.unlock();
         string new_str = caesar(cur_str);
         m2.lock();
+<<<<<<< HEAD
         timer.add_time_from_start(clock() - start_t, cur_task_num);
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         timer.add_time(0, clock() - cur_time, cur_task_num);
 
         queue2.push(Object(new_str, cur_task_num,clock()));
@@ -221,7 +300,10 @@ void second_conv() {
         }
         string cur_str = queue2.front().str;
         int cur_task_num = queue2.front().task_num;
+<<<<<<< HEAD
         timer.add_time_from_start(clock() - start_t, cur_task_num);
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         timer.add_time(1, clock() - queue2.front().time, queue2.front().task_num);
         queue2.pop();
 
@@ -229,7 +311,10 @@ void second_conv() {
         m2.unlock();
         string new_str = upper_lower(cur_str);
         m3.lock();
+<<<<<<< HEAD
         timer.add_time_from_start(clock() - start_t, cur_task_num);
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         timer.add_time(0, clock() - cur_time, cur_task_num);
 
         queue3.push(Object(new_str, cur_task_num, clock()));
@@ -250,7 +335,10 @@ void third_conv() {
         }
         string cur_str = queue3.front().str;
         int cur_task_num = queue3.front().task_num;
+<<<<<<< HEAD
         timer.add_time_from_start(clock() - start_t, cur_task_num);
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         timer.add_time(1, clock() - queue3.front().time, queue3.front().task_num);
         queue3.pop();
 
@@ -258,7 +346,10 @@ void third_conv() {
         m3.unlock();
         string new_str = reverse(cur_str);
         resm.lock();
+<<<<<<< HEAD
         timer.add_time_from_start(clock() - start_t, cur_task_num);
+=======
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         timer.add_time(0, clock() - cur_time, cur_task_num);
 
         res.push_back(new_str);
@@ -295,11 +386,16 @@ string generate() {
     return s;
 }
 
+<<<<<<< HEAD
 void create_log(clock_t time){
+=======
+void create_log(){
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
     FILE *f;
     f = fopen("log.txt", "w");
     timer.calculate();
     for (int i = 0; i < n; i++) {
+<<<<<<< HEAD
         fprintf(f,"Задача № %d\n", i + 1);
         fprintf(f, "Время ожидания в первой очереди: %ld\n", timer.get_waiting_times()[i][0]);
 
@@ -320,12 +416,24 @@ void create_log(clock_t time){
 
         fprintf(f, "Время окончания обработки(с начала работы программы): %ld\n", timer.get_time_from_start()[i][5]);
 
+=======
+        //"[%d] step item%d time: %ld (%ld)  value: %s\n", , i, time, time - mtime, str.c_str());
+        fprintf(f,"Задача № %d\n", i + 1);
+        fprintf(f, "Время ожидания в первой очереди: %ld\n", timer.get_waiting_times()[i][0]);
+        fprintf(f, "Время обработки в первом конвейре: %ld\n", timer.get_working_times()[i][0]);
+        fprintf(f, "Время ожидания во второй очереди: %ld\n", timer.get_waiting_times()[i][1]);
+        fprintf(f, "Время обработки во втором конвейре: %ld\n", timer.get_working_times()[i][1]);
+        fprintf(f, "Время ожидания в третьей очереди: %ld\n", timer.get_waiting_times()[i][2]);
+        fprintf(f, "Время обработки в третьем конвейре: %ld\n", timer.get_working_times()[i][2]);
+
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
         fprintf(f, "Минимальное время ожидания в очереди: %ld\n", timer.get_min_time()[i]);
         fprintf(f, "Максимальное время ожидания в очереди: %ld\n", timer.get_max_time()[i]);
         fprintf(f, "Среднее время ожидания в очереди: %ld\n", timer.get_avg_time()[i]);
         fprintf(f, "Время выполнения задачи: %ld\n", timer.get_proc_time()[i]);
         fprintf(f, "----------------------------------------------------------------------------\n");
     }
+<<<<<<< HEAD
 
     fprintf(f, "Время работы системы %ld\n", time);
     fclose(f);
@@ -337,6 +445,9 @@ void create_log(clock_t time){
             cout << timer.get_time_from_start()[i][j] << "\n";
         }
     }
+=======
+    fclose(f);
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
 }
 
 int main(){
@@ -349,11 +460,19 @@ int main(){
     }
 
     objvec.resize(n);
+<<<<<<< HEAD
     timer.set_size();
 
     for (int i = 0; i < n; i++){
         string s = generate();
         objvec[i] = (s);
+=======
+    timer.set_size(n, 3);
+
+    for (int i = 0; i < n; i++){
+        string s = generate();
+        objvec.push_back(s);
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
     }
 
     start_t = clock();
@@ -372,6 +491,10 @@ int main(){
     t2.join();
     t3.join();
 
+<<<<<<< HEAD
     create_log(clock() - start_t);
+=======
+    create_log();
+>>>>>>> 37373106dbc4fa35a4e884010f2bb787a019d8b3
     return 0;
 }
