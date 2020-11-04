@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/lyubaxapro/CLionProjects/aa_lab5/aa.cpp">
+			<Option target="aa_lab5"/>
+		</Unit>
 		<Unit filename="/home/lyubaxapro/CLionProjects/aa_lab5/main.cpp">
 			<Option target="aa_lab5"/>
 		</Unit>

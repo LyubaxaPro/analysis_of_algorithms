@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/aa_lab5.dir/main.cpp.o  -o aa_lab5  -lpthread 
+/usr/bin/c++  -g   CMakeFiles/aa_lab5.dir/main.cpp.o CMakeFiles/aa_lab5.dir/aa.cpp.o  -o aa_lab5  -lpthread 

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/lyubaxapro/CLionProjects/aa_lab5/aa.cpp" "/home/lyubaxapro/CLionProjects/aa_lab5/cmake-build-debug/CMakeFiles/aa_lab5.dir/aa.cpp.o"
   "/home/lyubaxapro/CLionProjects/aa_lab5/main.cpp" "/home/lyubaxapro/CLionProjects/aa_lab5/cmake-build-debug/CMakeFiles/aa_lab5.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

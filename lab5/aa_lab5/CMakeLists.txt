@@ -4,5 +4,5 @@ project(aa_lab5)
 find_package( Threads )
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(aa_lab5 main.cpp)
+add_executable(aa_lab5 main.cpp aa.cpp)
 target_link_libraries( aa_lab5 ${CMAKE_THREAD_LIBS_INIT} )
