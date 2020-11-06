@@ -133,23 +133,6 @@ private:
 
 static Timer timer;
 
-/*
- * время ожидания в очереди - ? добавляем время в очередь вместе с элементо когда остаем вычисляем
- * время решения задча(без ожидания в очереди) - ? время вокруг выполнения алгоритмов
- * время работы системы общеем - ?
- */
-
-//class Logger {
-//public:
-//    Logger() {}
-//    static void print(int step, string str, int i, clock_t time = 0){
-//        fprintf(f,"[%d] step item%d time: %ld (%ld)  value: %s\n", step, i, time, time - mtime, str.c_str());
-//        std::cout << step <<" step: "<< "  item" << i << " " << " time: "<< time - main_time<<"  " << str  << std::endl;
-//        mtime += time - mtime;
-//    }
-//};
-//Logger log;
-
 // сдвиг на следующую букву алфавита
 string caesar(string s) {
     for(int i = 0 ; i < s.length(); i++){
