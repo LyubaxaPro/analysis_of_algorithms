@@ -158,7 +158,6 @@ string reverse(string s) {
         char st = s[i];
         s[i] = s[i + shift];
         s[i + shift] = st;
-//        std::swap
     }
     return s;
 }
@@ -253,8 +252,6 @@ void third_conv() {
 // Диапазон чисел: [min, max]
 int get_random_number(int min, int max)
 {
-    // Установить генератор случайных чисел
-
     // Получить случайное число - формула
     int num = min + rand() % (max - min + 1);
 
