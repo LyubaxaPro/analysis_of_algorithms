@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lyubaxapro/analysis_of_algorithms/lab6/lab6/main.cpp
+stdlib.h
+-
+stdio.h
+-
+iostream
+-
+fstream
+-
+vector
+-
+limits
+-
+cmath
+-
+ctime
+-
+
